@@ -57,12 +57,11 @@ a{
 .login{
     color: #0065FC;
     font-weight: bold;
-    border-bottom: solid 1px transparent;
     transition: all 0.5s;
 }
 
 .login:hover{
-    border-color: #0065FC;
+    opacity: 0.7;
 }
 
 .nav{
@@ -83,11 +82,20 @@ a{
     padding-bottom: 14px;
 }
 
-.nav-item a:hover, .nav-item.active a{
+.nav-item:hover > a{
+    color:#0065FC;
+
+}
+
+.nav-item:hover{
+    border-color: #0065FC;
+}
+
+.nav-item:active > a{
     color:#0065FC;
 }
 
-.nav-item.active{
+.nav-item:active{
     border-color: #0065FC;
 }
 
@@ -128,15 +136,18 @@ a{
        position: relative;
     }
 
-   .nav-item.active::before{
+   .nav-item::before{
        content: '';
-       background-color: #0065FC;
        height: 3px;
        width: 100%;
        display: inline-block;
        position: absolute;
        left: 0;
        top: -36px;
+    }
+
+    .nav-item:hover::before{
+        background-color: #0065FC;
     }
 
    .login{
@@ -322,8 +333,7 @@ a{
 .lodging-popular{
     background-color: #f2f2f2;
     position: relative;
-    padding: 30px;
-    margin: 0 -30px;
+    padding: 20px;
 }
 
 .lodging-popular-top{
@@ -392,7 +402,7 @@ a.lodging-popular-item:hover{
 
 /* Lodging City */
 .lodging-city{
-    padding: 30px 0 20px;
+    padding: 30px 20px 20px;
 }
 
 .lodging-city-title{
@@ -465,15 +475,22 @@ a.lodging-popular-item:hover{
    }
 
     .lodging-city-item{
-    width: calc(50% - 34px);
-    margin: 10px 12px;
+        width: calc(50% - 34px);
+        margin: 10px 12px;
+   }
+
+   .lodging-popular{
+        padding: 30px 32px;
    }
 }
 
 @media screen and (min-width: 1024px){
-   .lodging .container{
+   .lodging .lodging-container{
        display: flex;
-       align-items: flex-start;
+       padding-left: 50px;
+       padding-right: 50px;
+       max-width: 1440px;
+       margin: 0 auto;
    }
 
    .lodging-city{
@@ -506,7 +523,6 @@ a.lodging-popular-item:hover{
        margin: 0 0 0 40px;
        border-radius: 20px;
        width: 417px;
-
    }
 
    .lodging-popular-item{
